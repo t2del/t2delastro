@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -10,8 +10,8 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
-	<HomeHeroSection />
+<Layout title="About | t2del" meta_description="About t2del - description" body_class="about index something you wish to add for any use">
+	
 	<main>		
 		<h2>Welcome to <span class="text-gradient">T2del</span></h2>
 		<p class="instructions">

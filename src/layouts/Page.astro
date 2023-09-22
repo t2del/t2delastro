@@ -1,0 +1,67 @@
+---
+// import {  Button, Footer } from '@littlesticks/odyssey-theme-components';
+import Header from '../components/head/Header.astro';
+import Layout from './Base.astro';
+import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
+import Logo from '../components/Logo.astro';
+import settings from '../config/settings';
+import { footerLists, footerSocials } from '../config/footer';
+
+
+export interface Props {
+	seo?: BaseHeadProps;
+}
+
+import { nav } from '../config/nav.js';
+
+const { seo } = Astro.props as Props;
+---
+
+<Layout seo={seo}>	
+	<Header rightMenu navData={nav} id="navID" slot="header">
+		<span slot="logo">
+			<Logo />
+		</span>
+		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
+	</Header>
+
+	<div id="page">
+		<slot />
+	</div>
+	<Footer
+		slot="footer"
+		background="var(--theme-surface-1)"
+		color="var(--theme-on-surface-1)"
+		footerLists={footerLists}
+    	footerSocials={footerSocials}
+		copyrightName={settings.name}
+    	
+	>
+		<Logo slot="logo" />
+	</Footer>
+</Layout>
+
+<script>
+	const scrollingElement = document.querySelector('header');
+
+	window.addEventListener('scroll', () => {
+		const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+		if (scrollPercentage > 1) {
+			scrollingElement.classList.add("white-bg"); // Red background
+		} else {
+			scrollingElement.classList.remove("white-bg");; // Default background
+		}
+	});
+    
+	const obeserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('show');
+			} else {
+				entry.target.classList.remove('show');
+			}
+		});
+	});
+	const hiddenElements = document.querySelectorAll('.notshow');
+	hiddenElements.forEach((el) => obeserver.observe(el))
+</script>
