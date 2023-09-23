@@ -40,28 +40,3 @@ const { seo } = Astro.props as Props;
 		<Logo slot="logo" />
 	</Footer>
 </Layout>
-
-<script>
-	const scrollingElement = document.querySelector('header');
-
-	window.addEventListener('scroll', () => {
-		const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-		if (scrollPercentage > 1) {
-			scrollingElement.classList.add("white-bg"); // Red background
-		} else {
-			scrollingElement.classList.remove("white-bg");; // Default background
-		}
-	});
-    
-	const obeserver = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if(entry.isIntersecting) {
-				entry.target.classList.add('show');
-			} else {
-				entry.target.classList.remove('show');
-			}
-		});
-	});
-	const hiddenElements = document.querySelectorAll('.notshow');
-	hiddenElements.forEach((el) => obeserver.observe(el))
-</script>
