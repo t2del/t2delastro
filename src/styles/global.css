@@ -70,3 +70,15 @@ header .content__container .header-logo-menu__container {
 	filter: blur(0) !important;
 	transform: translateX(0) !important;
 }
+
+.content__container {
+	margin: 100px auto;
+	max-width: var(--container-max-width);
+	padding: var(--container-padding);
+}
+.content__container.container-header {
+	margin: 0 auto;
+}
+.content__container--narrow {
+	max-width: var(--container-max-width-narrow);
+}
