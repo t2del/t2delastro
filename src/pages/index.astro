@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Container from '../components/Container.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -12,53 +14,56 @@ const posts = (await getCollection('blog')).sort(
 
 <Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
 	<HomeHeroSection />
-	<main>		
-		<h2>Welcome to <span class="text-gradient">T2del</span></h2>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-
 		<section>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<a href={`/t2delastro/blog/${post.slug}/`}>
-								<img width={720} height={360} src={post.data.heroImage} alt="" />
-								<h4 class="title">{post.data.title}</h4>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
-							</a>
-						</li>
-					))
-				}
+			<Container className="custom-class">
+			<h2>Welcome to <span class="text-gradient">T2del</span></h2>
+			<p class="instructions">
+				To get started, open the directory <code>src/pages</code> in your project.<br />
+				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			</p>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href="https://docs.astro.build/"
+					title="Documentation"
+					body="Learn how Astro works and explore the official API docs."
+				/>
+				<Card
+					href="https://astro.build/integrations/"
+					title="Integrations"
+					body="Supercharge your project with new frameworks and libraries."
+				/>
+				<Card
+					href="https://astro.build/themes/"
+					title="Themes"
+					body="Explore a galaxy of community-built starter themes."
+				/>
+				<Card
+					href="https://astro.build/chat/"
+					title="Community"
+					body="Come say hi to our amazing Discord community. ❤️"
+				/>
 			</ul>
+			</Container>
 		</section>
-	</main>
+		<section>
+			<Container className="custom-class">
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/t2delastro/blog/${post.slug}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Container>
+		</section>	
 </Layout>
 
 <style>

@@ -55,13 +55,18 @@ header .content__container .header-logo-menu__container {
 	transform: translateX(-100%);
 	transition: all 1s;
 }
+.notshow.blur {
+	opacity: 0;
+	filter: blur(30px);
+	transform: translateX(0)
+}
 @media(prefers-reduced-motion) {
 	.notshow {
 		transition: none;
 	}
 }								
 .show {
-	opacity: 1;
-	filter: blur(0);
-	transform: translateX(0);
+	opacity: 1 !important;
+	filter: blur(0) !important;
+	transform: translateX(0) !important;
 }
