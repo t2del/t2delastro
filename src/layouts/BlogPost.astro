@@ -6,6 +6,7 @@ import { nav } from '../config/nav.js';
 import Header from '../components/head/Header.astro';
 import Logo from '../components/Logo.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Container from '../components/Container.astro';
 
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 }
 
 type Props = CollectionEntry<'blog'>['data'];
-const { title, description, pubDate, updatedDate, heroImage, body_class } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, body_class, imgalt } = Astro.props;
 
 ---
 <!doctype html>
@@ -32,25 +33,27 @@ const { title, description, pubDate, updatedDate, heroImage, body_class } = Astr
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={1920} height={750} src={heroImage} alt="" />}
+					{heroImage && <img width={1920} height={750} src={heroImage} alt={imgalt} />}
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+				<Container className="custom-class">
+					<div class="prose">
+						<div class="title">
+							<div class="date">
+								<FormattedDate date={pubDate} />
+								{
+									updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)
+								}
+							</div>
+							<h1>{title}</h1>
+							<hr />
 						</div>
-						<h1>{title}</h1>
-						<hr />
+						<slot />
 					</div>
-					<slot />
-				</div>
+				</Container>
 			</article>
 		</main>
 

@@ -21,6 +21,9 @@ pre .language-id {
   display: none;
 }
 
+time {
+	font-size: .6rem;
+}
 
 header {
 	position: fixed;
@@ -61,4 +64,11 @@ header .content__container .header-logo-menu__container {
 }
 .content__container--narrow {
 	max-width: var(--container-max-width-narrow);
+}
+
+footer {
+	background-color: #fafafa;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 40px 0;
 }
