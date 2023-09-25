@@ -1,0 +1,32 @@
+.notshow {
+	opacity: 0;
+	transition: all 1s;
+}
+.notshow.fromleft {
+    transform: translateX(-5%);
+}
+.notshow.fromright {
+    transform: translateX(5%);
+}
+.notshow.fromtop {
+    transform: translateY(-30px);
+}
+.notshow.frombottom {
+    transform: translateY(30px);
+}
+.notshow.blur {
+	filter: blur(10px);
+}
+							
+.show {
+	opacity: 1 !important;
+	filter: blur(0) !important;
+	transform: translate(0, 0) !important;
+
+}
+
+@media(prefers-reduced-motion) {
+	.notshow {
+		transition: none;
+	}
+}	

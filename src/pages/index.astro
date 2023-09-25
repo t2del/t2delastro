@@ -16,7 +16,7 @@ const posts = (await getCollection('blog')).sort(
 	<HomeHeroSection />
 		<section>
 			<Container className="custom-class">
-			<h2 class="notshow">Welcome to <span class="text-gradient">T2del</span></h2>
+			<h2 class="notshow fromleft">Welcome to <span class="text-gradient">T2del</span></h2>
 			<p class="instructions">
 				To get started, open the directory <code>src/pages</code> in your project.<br />
 				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
@@ -54,7 +54,7 @@ const posts = (await getCollection('blog')).sort(
 				<ul>
 					{
 						posts.map((post) => (
-							<li>
+							<li class="notshow fromtop">
 								<a href={`/t2delastro/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>

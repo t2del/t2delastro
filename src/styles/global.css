@@ -49,26 +49,7 @@ header .content__container .header-logo-menu__container {
 	display: none !important;
 }
 
-.notshow {
-	opacity: 0;
-	/* filter: blur(10px); */
-	transform: translateX(-5%);
-	transition: all 1s;
-}
-.notshow.blur {
-	filter: blur(10px);
-	transform: translateX(0)
-}
-@media(prefers-reduced-motion) {
-	.notshow {
-		transition: none;
-	}
-}								
-.show {
-	opacity: 1 !important;
-	filter: blur(0) !important;
-	transform: translateX(0) !important;
-}
+
 
 .content__container {
 	margin: 100px auto;
