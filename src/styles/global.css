@@ -51,13 +51,12 @@ header .content__container .header-logo-menu__container {
 
 .notshow {
 	opacity: 0;
-	filter: blur(30px);
-	transform: translateX(-100%);
+	/* filter: blur(10px); */
+	transform: translateX(-5%);
 	transition: all 1s;
 }
 .notshow.blur {
-	opacity: 0;
-	filter: blur(30px);
+	filter: blur(10px);
 	transform: translateX(0)
 }
 @media(prefers-reduced-motion) {
