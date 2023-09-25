@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-
+import Container from '../components/Container.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -11,43 +11,22 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout title="About | t2del" meta_description="About t2del - description" body_class="about index something you wish to add for any use">
-	
-	<main>		
-		<h2>Welcome to <span class="text-gradient">T2del</span></h2>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-
-		<section>
-			<ul>
+	<section>
+		<Container className="custom-class">
+			<h2 class="notshow fromleft">About <span class="text-gradient">T2del</span></h2>
+			<p class="instructions">
+				A <code>Full-Stack</code> Developer with more than 10 years of relevant experience in web programming. Bringing up-to-date industry skills in front-end and back-end technology such as PHP, HTML, CSS, JavaScript, MySQL and hands-on experience with CMS such as WordPress. Detail-oriented and motivated to drive project completion on target with exceptional quality and guaranteed client satisfaction.
+			</p>		
+		</Container>
+	</section>
+	<section>
+		<Container className="custom-class">
+			<ul role="list" class="link-card-grid">
 				{
 					posts.map((post) => (
-						<li>
+						<li class="notshow fromtop">
 							<a href={`/t2delastro/blog/${post.slug}/`}>
-								<img width={720} height={360} src={post.data.heroImage} alt="" />
+								<img  src={post.data.heroImage} alt="" />
 								<h4 class="title">{post.data.title}</h4>
 								<p class="date">
 									<FormattedDate date={post.data.pubDate} />
@@ -57,8 +36,9 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</ul>
-		</section>
-	</main>
+		</Container>
+	</section>
+	
 </Layout>
 
 <style>

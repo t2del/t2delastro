@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
 
+
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -16,11 +17,8 @@ const posts = (await getCollection('blog')).sort(
 	<HomeHeroSection />
 		<section>
 			<Container className="custom-class">
-			<h2 class="notshow fromleft">Welcome to <span class="text-gradient">T2del</span></h2>
-			<p class="instructions">
-				To get started, open the directory <code>src/pages</code> in your project.<br />
-				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-			</p>
+
+			
 			<ul role="list" class="link-card-grid notshow blur">
 				<Card
 					href="#"
