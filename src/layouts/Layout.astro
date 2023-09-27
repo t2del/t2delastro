@@ -5,6 +5,7 @@ import '../styles/index.css';
 import BaseHead from '../components/head/BaseHead.astro';
 import { nav } from '../config/nav.js';
 import Header from '../components/head/Header.astro';
+import Footer from '../components/head/Footer.astro';
 import Logo from '../components/Logo.astro';
 
 interface Props {
@@ -28,9 +29,7 @@ const { title, meta_description, body_class } = Astro.props;
 			</span>
 		</Header>
 		<slot />
-		<footer>
-			Copyright © 2023
-		</footer>
+		<Footer>
 	</body>
 </html>
 

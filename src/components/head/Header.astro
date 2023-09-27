@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon'
 const { navData, rightMenu } = Astro.props;
 
 import Container from '../../components/Container.astro';
+
 ---
 
 <script type="module">
@@ -41,7 +42,7 @@ import Container from '../../components/Container.astro';
 		});
 	});
 	const hiddenElements = document.querySelectorAll('.notshow');
-	hiddenElements.forEach((el) => obeserver.observe(el))
+	hiddenElements.forEach((el) => obeserver.observe(el));
 </script>  
 
 <header id="t2delHeader" class={`${rightMenu ? "header--right" : ``.trim()}`}>

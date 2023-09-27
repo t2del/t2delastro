@@ -6,52 +6,53 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
+const posts_blog = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 
-
-const posts = (await getCollection('blog')).sort(
+const posts_project = (await getCollection('project')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
+
 <Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
 	<HomeHeroSection />
 		<section>
-			<Container className="custom-class">
-
-			
-			<ul role="list" class="link-card-grid notshow blur">
-				<Card
-					href="#"
-					title="Documentation"
-					body="Learn how Astro works and explore the official API docs."
-				
-				/>
-				<Card
-					href="#"
-					title="Integrations"
-					body="Supercharge your project with new frameworks and libraries."
-				
-				/>
-				<Card
-					href="#"
-					title="Themes"
-					body="Explore a galaxy of community-built starter themes."
+			<Container className="custom-class">			
+				<ul role="list" class="link-card-grid notshow blur">
+					<Card
+						href="#"
+						title="Documentation"
+						body="Learn how Astro works and explore the official API docs."
 					
-				/>
-				<Card
-					href="#"
-					title="Community"
-					body="Come say hi to our amazing Discord community. ❤️"
-				
-				/>
-			</ul>
+					/>
+					<Card
+						href="#"
+						title="Integrations"
+						body="Supercharge your project with new frameworks and libraries."
+					
+					/>
+					<Card
+						href="#"
+						title="Themes"
+						body="Explore a galaxy of community-built starter themes."
+						
+					/>
+					<Card
+						href="#"
+						title="Community"
+						body="Come say hi to our amazing Discord community. ❤️"
+					/>
+				</ul>
 			</Container>
 		</section>
 		<section>
 			<Container className="custom-class">
+				<h3>Blog</h3>
 				<ul role="list" class="link-card-grid">
 					{
-						posts.map((post) => (
+						posts_blog.map((post) => (
 							<li class="notshow fromtop">
 								<a href={`/t2delastro/blog/${post.slug}/`}>
 									<img  src={post.data.heroImage} alt="" />
@@ -63,8 +64,26 @@ const posts = (await getCollection('blog')).sort(
 							</li>
 						))
 					}
-				</ul>
-			</Container>
+				</ul>				
+			</Container>			
+		</section>
+		
+		<section>
+			<Container className="custom-class">
+				<h3>Project</h3>
+				<ul role="list" class="link-card-grid">
+					{
+						posts_project.map((post) => (
+							<li class="notshow fromtop">
+								<a href={`/t2delastro/project/${post.slug}/`}>
+									<img  src={post.data.heroImage} alt="" />
+									<h4 class="title">{post.data.title}</h4>
+								</a>
+							</li>
+						))
+					}
+				</ul>				
+			</Container>			
 		</section>	
 </Layout>
 
@@ -124,3 +143,6 @@ const posts = (await getCollection('blog')).sort(
 		padding: 0;
 	}
 </style>
+
+
+

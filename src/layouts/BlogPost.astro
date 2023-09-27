@@ -17,45 +17,27 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage, body_class, imgalt } = Astro.props;
 
 ---
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-	
-	<body class={body_class}>
-		<Header rightMenu navData={nav} id="navID" slot="header">
-			<span slot="logo">
-				<Logo />
-			</span>
-		</Header>
-
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1920} height={750} src={heroImage} alt={imgalt} />}
-				</div>
-				<Container className="custom-class">
-					<div class="prose">
-						<div class="title">
-							<div class="date">
-								<FormattedDate date={pubDate} />
-								{
-									updatedDate && (
-										<div class="last-updated-on">
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)
-								}
+<article>
+	<div class="hero-image notshow blur">
+		{heroImage && <img width={1920} height={750} src={heroImage} alt={imgalt} />}
+	</div>
+	<Container className="custom-class">
+		<div class="prose">
+			<div class="title">
+				<div class="date">
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={updatedDate} />
 							</div>
-							<h1>{title}</h1>
-							<hr />
-						</div>
-						<slot />
-					</div>
-				</Container>
-			</article>
-		</main>
-
-	</body>
-</html>
+						)
+					}
+				</div>
+				<h1>{title}</h1>
+				<hr />
+			</div>
+			<slot />
+		</div>
+	</Container>
+</article>
