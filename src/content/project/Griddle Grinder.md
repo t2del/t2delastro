@@ -1,8 +1,8 @@
 ---
-title: 'Asia Marketplace'
+title: 'Griddle & Grinder'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/griddler.png'
+siteUrl:  'https://www.griddlerngrinder.com/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'
 pubDate: 'Jul 08 2022'

@@ -1,8 +1,8 @@
 ---
-title: 'Asia Marketplace'
+title: 'Patmos Bible'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/patmos.png'
+siteUrl:  'https://www.georgeannadorai.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'
 pubDate: 'Jul 08 2022'

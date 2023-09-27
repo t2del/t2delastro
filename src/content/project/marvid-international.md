@@ -1,8 +1,8 @@
 ---
-title: 'Asia Marketplace'
+title: 'Marvid International'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/marvid.png'
+siteUrl:  'https://www.marvid.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'
 pubDate: 'Jul 08 2022'

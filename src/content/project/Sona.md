@@ -1,8 +1,8 @@
 ---
-title: 'Asia Marketplace'
+title: 'Sona'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/sona.png'
+siteUrl:  'https://sona.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'
 pubDate: 'Jul 08 2022'

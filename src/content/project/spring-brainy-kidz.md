@@ -1,10 +1,10 @@
 ---
-title: 'Asia Marketplace'
+title: 'Spring Brainy Kidz'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/sbk.png'
+siteUrl:  'https://springbrainykidz.com/'
 role: 'Front-End and Back-end Development'
-platform: 'OpenCart'
+platform: 'Wordpress / Woocommerce'
 pubDate: 'Jul 08 2022'
 status: 'active'
 ---

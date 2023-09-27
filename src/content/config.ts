@@ -16,14 +16,16 @@ const blog = defineCollection({
 const project = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
-		title: z.string(),
-		description: z.string(),
+		title: z.string().optional(),
+		desc: z.string().optional(),
 		heroImage: z.string().optional(),
-		imgalt: z.string().optional(),
 		siteUrl: z.string().optional(),
 		role: z.string().optional(),
 		platform: z.string().optional(),
+		// Transform string to Date object
 		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		status: z.string().optional(),
 	}),
 });
 

@@ -1,8 +1,8 @@
 ---
-title: 'Asia Marketplace'
+title: 'Shang Antique'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/asiamarketplace.png'
-siteUrl:  'https://www.asiamarketspace.com.sg/'
+heroImage: '/t2delastro/project/shang.png'
+siteUrl:  'https://www.shangantique.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'
 pubDate: 'Jul 08 2022'

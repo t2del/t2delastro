@@ -1,9 +1,12 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Sis Premium Meats'
+desc: 'Lorem ipsum dolor sit amet'
+heroImage: '/t2delastro/project/spm.png'
+siteUrl:  'https://www.sispremium.com/'
+role: 'Front-End and Back-end Development'
+platform: 'OpenCart'
 pubDate: 'Jul 08 2022'
-heroImage: '/t2delastro/blog-placeholder-3.jpg'
-imgalt: 'First post'
+status: 'active'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
