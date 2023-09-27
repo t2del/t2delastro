@@ -19,7 +19,7 @@ const { title, description, pubDate, updatedDate, heroImage, body_class, imgalt 
 ---
 <article>
 	<div class="hero-image notshow blur">
-		{heroImage && <img width={1920} height={750} src={heroImage} alt={imgalt} />}
+		{heroImage && <img width={1920} height={750} src={heroImage} alt={imgalt} loading="lazy"/>}
 	</div>
 	<Container className="custom-class">
 		<div class="prose">
