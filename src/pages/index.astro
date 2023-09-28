@@ -84,18 +84,22 @@ const posts_project = (await getCollection('project'))
 									<img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} />
 									<h4 class="title">{post.data.title}</h4>
 								</a>
-								<AstroGreet message={post.data.title} slug={post.slug} className="" />
+								<AstroGreet message={post.data.title} slug={post.slug} className="" title={post.data.title}  />
 							</li>
-
-							<div id={post.slug} class="modal">						
-								<div class="modal-content">
-									<span class="close">&times;</span>
-									<p>{post.data.title}</p>
-								</div>
-							</div>
 						))
 					}
-				</ul>							
+				</ul>
+				{
+					posts_project.map((post) => (
+						<div id={post.slug} class="modal">						
+							<div class="modal-content">
+								<span class="close">&times;</span>
+								<p>{post.data.title}</p>
+							</div>
+						</div>
+						// 
+					))
+				}						
 			</Container>			
 		</section>	
 </Layout>
@@ -167,6 +171,10 @@ const posts_project = (await getCollection('project'))
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal.show {
+	display: block;
 }
 
 /* Modal Content/Box */

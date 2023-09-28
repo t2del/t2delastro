@@ -1,10 +1,10 @@
 ---
-const { message = 'Welcome, world!', slug, className } = Astro.props;
+const { message = 'Welcome, world!', slug, className, title } = Astro.props;
 ---
 
 <!-- Store the message prop as a data attribute. -->
 <astro-greet data-message={message} data-slug={slug}>
-  <button class={`some-class ${className}`}>Say hi!</button>
+  <button class={`some-class ${className}`}>{title}</button>
 </astro-greet>
 
 
@@ -19,16 +19,18 @@ const { message = 'Welcome, world!', slug, className } = Astro.props;
       const slug = this.dataset.slug;
       const button = this.querySelector('button');
 
-      // Get the modal
+        // Get the modal
         var modal = document.getElementById(slug);
-        var span = document.getElementsByClassName("close")[0];
+        
         button.addEventListener('click', () => {
-            modal.style.display = "block";
+            modal.classList.add("show");
         });
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            console.log(event);            
-        }
+        // Add a click event listener to the window when the modal is active, add close modal action
+        window.addEventListener('click', function(event) {
+            if (event.target.id) {  
+                event.target.classList.remove('show');
+            }
+        });
     }
   }
   customElements.define('astro-greet', AstroGreet);
