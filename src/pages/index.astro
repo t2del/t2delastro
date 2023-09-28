@@ -5,6 +5,8 @@ import Container from '../components/Container.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import AstroGreet from '../components/AstroGreet.astro';
+
 
 const posts_blog = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -18,7 +20,7 @@ const posts_project = (await getCollection('project'))
 
 <Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
 	<HomeHeroSection />
-		<section>
+		<section class="hide">
 			<Container className="custom-class">			
 				<ul role="list" class="link-card-grid notshow blur">
 					<Card
@@ -61,7 +63,9 @@ const posts_project = (await getCollection('project'))
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
+								
 							</li>
+							
 						))
 					}
 				</ul>				
@@ -69,20 +73,29 @@ const posts_project = (await getCollection('project'))
 		</section>
 		
 		<section>
+			
 			<Container className="custom-class">
 				<h3>Project</h3>
 				<ul role="list" class="link-card-grid">
 					{
 						posts_project.map((post) => (
-							<li class="notshow fromtop">
+							<li class="notshow blur">
 								<a href={`/t2delastro/project/${post.slug}/`}>
 									<img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} />
 									<h4 class="title">{post.data.title}</h4>
 								</a>
+								<AstroGreet message={post.data.title} slug={post.slug} className="" />
 							</li>
+
+							<div id={post.slug} class="modal">						
+								<div class="modal-content">
+									<span class="close">&times;</span>
+									<p>{post.data.title}</p>
+								</div>
+							</div>
 						))
 					}
-				</ul>				
+				</ul>							
 			</Container>			
 		</section>	
 </Layout>
@@ -142,7 +155,41 @@ const posts_project = (await getCollection('project'))
 		gap: 2rem;
 		padding: 0;
 	}
+
+	.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
-
-
-

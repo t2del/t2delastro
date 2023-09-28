@@ -1,0 +1,36 @@
+---
+const { message = 'Welcome, world!', slug, className } = Astro.props;
+---
+
+<!-- Store the message prop as a data attribute. -->
+<astro-greet data-message={message} data-slug={slug}>
+  <button class={`some-class ${className}`}>Say hi!</button>
+</astro-greet>
+
+
+
+<script>
+  class AstroGreet extends HTMLElement {
+    constructor() {
+      super();
+
+      // Read the message from the data attribute.
+      const message = this.dataset.message;
+      const slug = this.dataset.slug;
+      const button = this.querySelector('button');
+
+      // Get the modal
+        var modal = document.getElementById(slug);
+        var span = document.getElementsByClassName("close")[0];
+        button.addEventListener('click', () => {
+            modal.style.display = "block";
+        });
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            console.log(event);            
+        }
+    }
+  }
+  customElements.define('astro-greet', AstroGreet);
+</script>
+
