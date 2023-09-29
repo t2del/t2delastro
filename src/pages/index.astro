@@ -5,7 +5,7 @@ import Container from '../components/Container.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-import AstroGreet from '../components/AstroGreet.astro';
+import CustomModal from '../components/Modal.astro';
 
 
 const posts_blog = (await getCollection('blog')).sort(
@@ -79,12 +79,8 @@ const posts_project = (await getCollection('project'))
 				<ul role="list" class="link-card-grid">
 					{
 						posts_project.map((post) => (
-							<li class="notshow blur">
-								<a href={`/t2delastro/project/${post.slug}/`}>
-									<img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} />
-									<h4 class="title">{post.data.title}</h4>
-								</a>
-								<AstroGreet message={post.data.title} slug={post.slug} className="" title={post.data.title}  />
+							<li>
+								<CustomModal title={post.data.title} slug={post.slug} className="notshow blur" imgsrc={post.data.heroImage}  />
 							</li>
 						))
 					}
@@ -93,8 +89,16 @@ const posts_project = (await getCollection('project'))
 					posts_project.map((post) => (
 						<div id={post.slug} class="modal">						
 							<div class="modal-content">
-								<span class="close">&times;</span>
+								
 								<p>{post.data.title}</p>
+								<div class="modal-grid">
+									<div class="description">
+										<div>Role: <span>{post.data.role}</span></div>
+										<div>Platform: <span>{post.data.platform}</span></div>
+										<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
+									</div>
+									<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
+								</div>
 							</div>
 						</div>
 						// 
@@ -161,43 +165,50 @@ const posts_project = (await getCollection('project'))
 	}
 
 	.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
 
-.modal.show {
-	display: block;
-}
+	.modal.modalshow {
+		display: block;
+	}
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+	/* Modal Content/Box */
+	.modal-content {
+		background-color: #fefefe;
+		padding: 20px;
+		border: 1px solid #888;
+		max-width: 650px;
+		position: absolute;
+		left: 50%;
+		top: 40%;
+		transform: translate(-50%,-50%);
+		transition: all 300ms ease-in;
+	}
+	.modal.modalshow .modal-content {
+		top: 50%;
+	}
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+	/* The Close Button */
+	.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	}
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+	.close:hover,
+	.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	}
 </style>

@@ -1,10 +1,13 @@
 ---
-const { message = 'Welcome, world!', slug, className, title } = Astro.props;
+const { title = 'Welcome, world!', slug, className, imgsrc } = Astro.props;
 ---
 
 <!-- Store the message prop as a data attribute. -->
-<astro-greet data-message={message} data-slug={slug}>
-  <button class={`some-class ${className}`}>{title}</button>
+<astro-greet data-message={title} data-slug={slug}>
+  <a class={` ${className}`}>
+    <img  src={imgsrc} alt={title}  title={title} />
+    <h4 class="title">{title}</h4>  
+  </a>
 </astro-greet>
 
 
@@ -15,20 +18,20 @@ const { message = 'Welcome, world!', slug, className, title } = Astro.props;
       super();
 
       // Read the message from the data attribute.
-      const message = this.dataset.message;
+      const title = this.dataset.title;
       const slug = this.dataset.slug;
-      const button = this.querySelector('button');
+      const button = this.querySelector('a');
 
         // Get the modal
         var modal = document.getElementById(slug);
         
         button.addEventListener('click', () => {
-            modal.classList.add("show");
+            modal.classList.add("modalshow");
         });
         // Add a click event listener to the window when the modal is active, add close modal action
         window.addEventListener('click', function(event) {
             if (event.target.id) {  
-                event.target.classList.remove('show');
+                event.target.classList.remove('modalshow');
             }
         });
     }
