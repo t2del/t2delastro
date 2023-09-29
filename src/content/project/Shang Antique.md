@@ -1,7 +1,7 @@
 ---
 title: 'Shang Antique'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/shang.png'
+heroImage: '/t2delastro/project/shang.jpg'
 siteUrl:  'https://www.shangantique.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

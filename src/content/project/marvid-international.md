@@ -1,7 +1,7 @@
 ---
 title: 'Marvid International'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/marvid.png'
+heroImage: '/t2delastro/project/marvid.jpg'
 siteUrl:  'https://www.marvid.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

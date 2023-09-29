@@ -2,7 +2,7 @@
 title: 'Clovers SG
 '
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/clovers.png'
+heroImage: '/t2delastro/project/clovers.jpg'
 siteUrl:  'https://www.clovers.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

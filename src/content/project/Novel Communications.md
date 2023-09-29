@@ -2,7 +2,7 @@
 title: 'Novel Communications
 '
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/novelcomm.png'
+heroImage: '/t2delastro/project/novelcomm.jpg'
 siteUrl:  'https://www.novelcomm.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

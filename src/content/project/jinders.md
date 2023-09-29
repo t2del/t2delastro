@@ -1,7 +1,7 @@
 ---
 title: 'Jinders'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/jinders.png'
+heroImage: '/t2delastro/project/jinders.jpg'
 siteUrl:  'https://www.jinders.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'Wordpress / Woocommerce'

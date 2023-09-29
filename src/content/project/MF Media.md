@@ -1,7 +1,7 @@
 ---
 title: 'MF Media'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/mfmedia.png'
+heroImage: '/t2delastro/project/mfmedia.jpg'
 siteUrl:  'https://mfmedia.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

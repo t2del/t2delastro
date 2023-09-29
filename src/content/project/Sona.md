@@ -1,7 +1,7 @@
 ---
 title: 'Sona'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/sona.png'
+heroImage: '/t2delastro/project/sona.jpg'
 siteUrl:  'https://sona.com.sg/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

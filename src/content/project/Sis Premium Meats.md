@@ -1,7 +1,7 @@
 ---
 title: 'Sis Premium Meats'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/spm.png'
+heroImage: '/t2delastro/project/spm.jpg'
 siteUrl:  'https://www.sispremium.com/'
 role: 'Front-End and Back-end Development'
 platform: 'OpenCart'

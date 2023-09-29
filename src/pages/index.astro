@@ -79,8 +79,8 @@ const posts_project = (await getCollection('project'))
 				<ul role="list" class="link-card-grid">
 					{
 						posts_project.map((post) => (
-							<li>
-								<CustomModal title={post.data.title} slug={post.slug} className="notshow blur" imgsrc={post.data.heroImage}  />
+							<li class="notshow blur">
+								<CustomModal title={post.data.title} slug={post.slug} className="" imgsrc={post.data.heroImage}  />
 							</li>
 						))
 					}
