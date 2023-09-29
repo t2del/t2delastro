@@ -1,9 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Container from '../components/Container.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from "astro:assets"
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -14,31 +13,35 @@ const posts = (await getCollection('blog')).sort(
 	<section>
 		<Container className="custom-class">
 			<h2 class="notshow fromleft">About <span class="text-gradient">T2del</span></h2>
-			<p class="instructions">
-				A <code>Full-Stack</code> Developer with more than 10 years of relevant experience in web programming. Bringing up-to-date industry skills in front-end and back-end technology such as PHP, HTML, CSS, JavaScript, MySQL and hands-on experience with CMS such as WordPress. Detail-oriented and motivated to drive project completion on target with exceptional quality and guaranteed client satisfaction.
-			</p>		
+
+			<div class="link-card-grid">
+				<div class="photo">
+					<Image src="https://t2del.github.io/images/den.jpg" width={400} height={400} format='webp' alt={'Dennis Macapagal'} class:list={'profile-photo'}></Image>
+				</div>
+				<div class="description">
+					<p>
+						A <code>Full-Stack</code> Developer with more than 10 years of relevant experience in web programming. Bringing up-to-date industry skills in front-end and back-end technology such as PHP, HTML, CSS, JavaScript, MySQL and hands-on experience with CMS such as WordPress. Detail-oriented and motivated to drive project completion on target with exceptional quality and guaranteed client satisfaction.
+					</p>
+					<ul class="list-unstyled list-boxed" id="skills-list">
+						<li>PHP</li>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>JavaScript (jQuery, Ajax, Json)</li>
+						<li>Bootstrap</li>
+						<li>Sass / Less</li>
+						<li> WordPress/ Woocommerce</li>
+						<li>MySQL</li>
+						<li>OpenCart</li>
+						<li>Laravel</li>
+						<li>RestAPI</li>
+						<li>GIT</li>
+					</ul>
+				</div>
+				
+			</div>
+					
 		</Container>
 	</section>
-	<section>
-		<Container className="custom-class">
-			<ul role="list" class="link-card-grid">
-				{
-					posts.map((post) => (
-						<li class="notshow fromtop">
-							<a href={`/t2delastro/blog/${post.slug}/`}>
-								<img  src={post.data.heroImage} alt="" />
-								<h4 class="title">{post.data.title}</h4>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</Container>
-	</section>
-	
 </Layout>
 
 <style>
@@ -95,5 +98,23 @@ const posts = (await getCollection('blog')).sort(
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	.profile-photo {
+		border-radius: 50%;
+		box-shadow: 0px 0px 15px 1px grey;
+		margin: 0 auto;
+	}
+	.list-unstyled {
+		padding-left: 0;
+		list-style: none;
+	}
+	.list-boxed li {
+		display: inline-block;
+		padding: 10px;
+		background: #339BEB;
+		color: white;
+		border-radius: 10px;
+		box-shadow: 2px 2px #888888;
+		margin: 5px;
 	}
 </style>

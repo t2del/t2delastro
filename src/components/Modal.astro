@@ -1,12 +1,12 @@
 ---
 const { title = 'Welcome, world!', slug, className, imgsrc } = Astro.props;
-import { Image } from "astro:assets"
+
 ---
 
 <!-- Store the message prop as a data attribute. -->
 <astro-greet data-message={title} data-slug={slug}>
   <button class={`no-bg ${className}`}>
-    <!-- <Image src={imgsrc} alt={title}  title={title} width={500} height={230} format="avif" ></Image> -->
+
     <img  src={imgsrc} alt={title}  title={title} class="" />
     <h4 class="title">{title}</h4>  
   </button>

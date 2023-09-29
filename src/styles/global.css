@@ -1,6 +1,8 @@
 html,
 body {
 	height: 100%;
+	scroll-behavior: smooth;
+	scroll-padding: 90px;
 }
 
 body {
@@ -131,4 +133,97 @@ footer {
 }
 .social-links li.whatsapp a:hover {
 	color: #25d366;
+}
+
+
+.profile-photo {
+	border-radius: 50%;
+	box-shadow: 0px 0px 15px 1px grey;
+	margin: 0 auto;
+}
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+.list-boxed li {
+	display: inline-block;
+	padding: 10px;
+	background: #339BEB;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 2px 2px #888888;
+	margin: 5px;
+}
+
+.portfolio-list:nth-child(1) {
+    transition-delay: 100ms;
+}
+.portfolio-list:nth-child(2) {
+    transition-delay: 200ms;
+}
+.portfolio-list:nth-child(3) {
+    transition-delay: 300ms;
+}
+.portfolio-list:nth-child(4) {
+    transition-delay: 400ms;
+}
+.portfolio-list:nth-child(5) {
+    transition-delay: 500ms;
+}
+.portfolio-list:nth-child(6) {
+    transition-delay: 600ms;
+}
+.portfolio-list:nth-child(7) {
+    transition-delay: 700ms;
+}
+.portfolio-list:nth-child(8) {
+    transition-delay: 800ms;
+}
+.portfolio-list:nth-child(9) {
+    transition-delay: 800ms;
+}
+.portfolio-list:nth-child(10) {
+    transition-delay: 1000ms;
+}
+.portfolio-list:nth-child(11) {
+    transition-delay: 1100ms;
+}
+.portfolio-list:nth-child(12) {
+    transition-delay: 1200ms;
+}
+.portfolio-list:nth-child(13) {
+    transition-delay: 1300ms;
+}
+.portfolio-list:nth-child(14) {
+    transition-delay: 1400ms;
+}
+.portfolio-list:nth-child(15) {
+    transition-delay: 1500ms;
+}
+.portfolio-list:nth-child(16) {
+    transition-delay: 1600ms;
+}
+.portfolio-list:nth-child(17) {
+    transition-delay: 1700ms;
+}
+.portfolio-list:nth-child(18) {
+    transition-delay: 1800ms;
+}
+.portfolio-list:nth-child(19) {
+    transition-delay: 1900ms;
+}
+.portfolio-list:nth-child(20) {
+    transition-delay: 2000ms;
+}
+.portfolio-list:nth-child(22) {
+    transition-delay: 2200ms;
+}
+.portfolio-list:nth-child(22) {
+    transition-delay: 2200ms;
+}
+.portfolio-list:nth-child(23) {
+    transition-delay: 2300ms;
+}
+.portfolio-list:nth-child(24) {
+    transition-delay: 2400ms;
 }

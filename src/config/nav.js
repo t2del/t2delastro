@@ -5,11 +5,13 @@ export const nav = [
 	},
 	{
 		title: 'About',
-		slug: '/t2delastro/about',
+		slug: '#about',
+		//slug: '/t2delastro/about',
 	},
 	{
 		title: 'Portfolio',
-		slug: '/t2delastro/portfolio',
+		slug: '#portfolio',
+		//slug: '/t2delastro/portfolio',
 	},
 
 ];
