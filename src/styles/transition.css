@@ -25,6 +25,20 @@
 
 }
 
+
+.animate_underline {
+	background-image: linear-gradient(90deg, #00000080, #00000080);
+	background-size: 0 3px;
+	background-position: left bottom;
+	transition: background-size 100ms ease-in;
+	background-repeat: no-repeat;
+}
+.animate_underline:hover {
+	/* text-decoration: underline; */
+	background-size: 100%  3px;
+	cursor: pointer;
+}
+
 @media(prefers-reduced-motion) {
 	.notshow {
 		transition: none;

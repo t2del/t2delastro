@@ -26,7 +26,7 @@ const posts_project = (await getCollection('project'))
 					{
 						posts_project.map((post) => (
 							<li class="notshow blur portfolio-list">
-								<CustomModal title={post.data.title} slug={post.slug} className="" imgsrc={post.data.heroImage}  />
+								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
 							</li>
 						))
 					}
