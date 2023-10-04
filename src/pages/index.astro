@@ -9,10 +9,9 @@ import CustomModal from '../components/Modal.astro';
 import { Image } from "astro:assets"
 
 
-const posts_blog = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-
+const posts_blog = (await getCollection('blog'))
+	.filter(post => post.data.status == 'active') // Filter out active posts
+  	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 const posts_project = (await getCollection('project'))
   //.filter(post => post.data.status == 'active') // Filter out active posts
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());

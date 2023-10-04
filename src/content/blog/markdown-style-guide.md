@@ -4,6 +4,7 @@ description: 'Here is a sample of some basic Markdown syntax that can be used wh
 pubDate: 'Jul 01 2022'
 heroImage: '/t2delastro/blog-placeholder-1.jpg'
 imgalt: 'Second post'
+
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
