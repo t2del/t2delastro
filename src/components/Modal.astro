@@ -48,13 +48,18 @@ const { title = 'Welcome, world!', slug, classContainer = '', classText = '', im
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
   .btn-modal img {
-    aspect-ratio: 8 / 4;
+    /* aspect-ratio: 8 / 4; */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
   }
   .btn-modal h4 {
     display: inline;
     margin: 10px;
+    font-size: var(--font-size-sm);
   }
 
   

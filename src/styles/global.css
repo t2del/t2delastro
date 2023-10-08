@@ -218,8 +218,7 @@ footer {
 	width: 0; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	background-color: rgb(0 0 0 / 57%); /* Black w/ opacity */
 	opacity: 0;
 	transition: opacity 300ms ease-in;
 }
@@ -231,15 +230,19 @@ footer {
 
 /* Modal Content/Box */
 .modal-content {
-	background-color: #fefefe;
-	padding: 20px;
-	box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+	background-color: #fefefe;	
+	box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 61%);
 	max-width: 650px;
 	position: absolute;
 	left: 50%;
 	top: 30%;
 	transform: translate(-50%,-50%);
 	transition: all 200ms ease-in;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.modal-content .description {
+	padding: 15px;
 }
 .modal.modalshow .modal-content {
 	top: 50%;

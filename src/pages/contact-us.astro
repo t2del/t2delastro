@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("name");
+    const email = data.get("email");
+    const password = data.get("password");
+	
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+
+<Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
+	<section id="portfolio">			
+		<Container className="custom-class">
+			
+			<div class="feedback-form">
+				<h2 class="notshow fromleft"> <span class="text-gradient">Contact Form</span></h2>
+				<form
+					netlify
+					netlify-honeypot
+					name="feedback"
+					method="POST"
+					
+				>
+					<p class="hidden">
+					<label>
+						Don’t fill this out if you’re human: <input name="bot-field" />
+					</label>
+					</p>
+					<input type="hidden" name="form-name" value="feedback" />
+					<input id="name" type="text" name="name" placeholder="Name"  />
+					<input id="email" type="email" name="email" placeholder="Email" required />
+					<textarea id="feedback" wrap="soft" name="feedback"  placeholder="What is your feedback?" required></textarea>
+					<button type="submit">Submit</button>
+				</form>
+			</div>		
+		</Container>					
+	</section>	
+</Layout>
+
+<style>
+	.feedback-form {
+	margin: 0 auto;
+	min-width: 250px;
+	width: 400px;
+  }
+  input,
+  textarea,
+  button {
+	font-size: inherit;
+	margin: 15px 0;
+	padding: 12px 20px;
+	width: 100%;
+  }
+  button {
+	background-color: teal;
+	border: 1px solid black;
+	color: white;
+	width: 50%;
+  }
+  .hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+  }
+  </style>

@@ -12,8 +12,8 @@ export const nav = [
 	  slug: '/t2delastro/blog',
 	  submenu: [
 		{
-		  title: 'First post',
-		  slug: '/t2delastro/blog/first-post',
+		  	title: 'First post',
+		  	slug: '/t2delastro/blog/first-post',
 		},
 		{
 			title: 'Second post',
@@ -30,4 +30,4 @@ export const nav = [
 	  slug: '/t2delastro/portfolio',
 	},
   ];
-  
+

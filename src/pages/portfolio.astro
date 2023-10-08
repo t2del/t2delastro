@@ -35,10 +35,10 @@ const posts_project = (await getCollection('project'))
 					posts_project.map((post) => (
 						<div id={post.slug} class="modal">						
 							<div class="modal-content">
-								
-								<p>{post.data.title}</p>
 								<div class="modal-grid">
+									
 									<div class="description">
+										<p>{post.data.title}</p>
 										<div>Role: <span>{post.data.role}</span></div>
 										<div>Platform: <span>{post.data.platform}</span></div>
 										<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>

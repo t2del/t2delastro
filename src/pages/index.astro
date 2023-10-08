@@ -9,7 +9,7 @@ import CustomModal from '../components/Modal.astro';
 import { Image } from "astro:assets"
 
 
-const posts_blog = (await getCollection('blog'))
+	const posts_blog = (await getCollection('blog'))
 	.filter(post => post.data.status == 'active') // Filter out active posts
   	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 const posts_project = (await getCollection('project'))
@@ -66,11 +66,11 @@ const posts_project = (await getCollection('project'))
 							<li>PHP</li>
 							<li>HTML</li>
 							<li>CSS</li>
-							<li>JavaScript (jQuery, Ajax, Json)</li>
 							<li>Bootstrap</li>
 							<li>Sass / Less</li>
-							<li> WordPress/ Woocommerce</li>
+							<li>JavaScript (jQuery, Ajax, Json)</li>
 							<li>MySQL</li>
+							<li>WordPress/ Woocommerce</li>							
 							<li>OpenCart</li>
 							<li>Laravel</li>
 							<li>RestAPI</li>
@@ -118,26 +118,27 @@ const posts_project = (await getCollection('project'))
 							</li>
 						))
 					}
-				</ul>
-				{
-					posts_project.map((post) => (
-						<div id={post.slug} class="modal">						
-							<div class="modal-content">								
-								<p>{post.data.title}</p>
-								<div class="modal-grid">
-									<div class="description">
-										<div>Role: <span>{post.data.role}</span></div>
-										<div>Platform: <span>{post.data.platform}</span></div>
-										<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
-									</div>
-									<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
+				</ul>						
+			</Container>
+			{
+				posts_project.map((post) => (
+					<div id={post.slug} class="modal">						
+						<div class="modal-content">						
+							<div class="modal-grid">
+								
+								<div class="description">
+									<p>{post.data.title}</p>
+									<div>Role: <span>{post.data.role}</span></div>
+									<div>Platform: <span>{post.data.platform}</span></div>
+									<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
 								</div>
+								<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
 							</div>
 						</div>
-						// 
-					))
-				}		
-			</Container>					
+					</div>
+					// 
+				))
+			}					
 		</section>	
 </Layout>
 
