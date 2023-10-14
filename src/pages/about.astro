@@ -3,11 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
 import { getCollection } from 'astro:content';
 import { Image } from "astro:assets"
-
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
 ---
 
 <Layout title="About | t2del" meta_description="About t2del - description" body_class="about index something you wish to add for any use">
@@ -44,79 +39,3 @@ const posts = (await getCollection('blog')).sort(
 		</Container>
 	</section>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h2 {
-		font-size: 3em;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: #00000080;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-	.profile-photo {
-		border-radius: 50%;
-		box-shadow: 0px 0px 15px 1px grey;
-		margin: 0 auto;
-	}
-	.list-unstyled {
-		padding-left: 0;
-		list-style: none;
-	}
-	.list-boxed li {
-		display: inline-block;
-		padding: 10px;
-		background: #339BEB;
-		color: white;
-		border-radius: 10px;
-		box-shadow: 2px 2px #888888;
-		margin: 5px;
-	}
-	
-</style>
