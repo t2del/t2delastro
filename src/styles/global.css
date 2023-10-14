@@ -232,7 +232,8 @@ footer {
 .modal-content {
 	background-color: #fefefe;	
 	box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 61%);
-	max-width: 650px;
+	max-width: 900px;
+	width: 95%;
 	position: absolute;
 	left: 50%;
 	top: 30%;
