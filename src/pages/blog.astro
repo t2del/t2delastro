@@ -1,27 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Container from '../components/Container.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { getCollection } from 'astro:content';
+
 import FormattedDate from '../components/FormattedDate.astro';
-import CustomModal from '../components/Modal.astro';
-import { Image } from "astro:assets"
+// import { Debug } from 'astro:components';
 
-
+// const posts = await Astro.glob('../content/blog/*.md'); // returns an array of posts that live at ./src/content/blog/*.md
 const posts_blog = (await getCollection('blog'))
 	.filter(post => post.data.status == 'active') // Filter out active posts
   	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
-const posts_project = (await getCollection('project'))
-  //.filter(post => post.data.status == 'active') // Filter out active posts
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
 ---
 
-
+<!-- <Debug {posts} /> -->
 <Layout title="Blog | t2del" meta_description="Blog | My Blog" body_class="blog index something you wish to add for any use">
 	<section>
 		<Container className="custom-class">
 			<h2 class="notshow fromleft"> <span class="text-gradient">Blog</span></h2>
+			<!-- <ul role="list" class="link-card-grid">
+				{posts.slice(0, 4).map((post) => (
+					<article>
+					  <h2>{post.frontmatter.title}</h2>
+					  <p>{post.frontmatter.description}</p>
+					  <a href={post.url}>Read more</a>
+					</article>
+				  ))}
+			</ul> -->
+
 			<ul role="list" class="link-card-grid">
 				{
 					posts_blog.map((post) => (
@@ -38,7 +44,7 @@ const posts_project = (await getCollection('project'))
 						
 					))
 				}
-			</ul>				
+			</ul>
 		</Container>			
 	</section>
 </Layout>

@@ -1,9 +1,9 @@
 ---
-title: 'Third post'
+title: 'Ninth post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
 heroImage: '/t2delastro/blog-placeholder-3.jpg'
-imgalt: 'Third post'
+imgalt: 'Ninth post'
 status: 'active'
 ---
 

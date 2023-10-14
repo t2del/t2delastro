@@ -3,21 +3,29 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Container from '../components/Container.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import CustomModal from '../components/Modal.astro';
 import { Image } from "astro:assets"
+
+import { Debug } from 'astro:components';
 
 
 	const posts_blog = (await getCollection('blog'))
 	.filter(post => post.data.status == 'active') // Filter out active posts
   	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
-const posts_project = (await getCollection('project'))
-  //.filter(post => post.data.status == 'active') // Filter out active posts
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+	const posts_project = (await getCollection('project'))
+	//.filter(post => post.data.status == 'active') // Filter out active posts
+	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+
+	const posts_project_featured = (await getCollection('project'))
+	.filter(post => post.data.status == 'featured') // Filter out active posts
+	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+	//const fhggroup = await getEntry('project', 'fullertonhealthgroup');	
 ---
 
-
+<!-- <Debug {posts_project_featured} /> -->
 <Layout title="t2del" meta_description="t2del - meta description" body_class="home index something you wish to add for any use">
 	<HomeHeroSection />
 		<section class="hide">
@@ -110,6 +118,15 @@ const posts_project = (await getCollection('project'))
 		<section id="portfolio">			
 			<Container className="custom-class">
 				<h2 class="notshow fromleft"> <span class="text-gradient">Portfolio</span></h2>
+				<ul role="list" class="link-card-grid featured">
+					{
+						posts_project_featured.map((post) => (
+							<li class="notshow blur portfolio-list">
+								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
+							</li>
+						))
+					}
+				</ul>
 				<ul role="list" class="link-card-grid">
 					{
 						posts_project.map((post) => (
