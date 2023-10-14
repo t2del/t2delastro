@@ -59,12 +59,7 @@ span {
 	max-width: var(--container-max-width-narrow);
 }
 
-footer {
-	background-color: #fafafa;
-    border-top: 1px solid #f3f3f3;
-    border-bottom: 1px solid #f3f3f3;
-    padding: 40px 0;
-}
+
 
 /* Social Links
 ---------------------------------- */
