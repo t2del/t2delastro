@@ -4,7 +4,7 @@ desc: 'Lorem ipsum dolor sit amet'
 heroImage: '/t2delastro/project/fhg-group.png'
 siteUrl:  'https://www.fullertonhealth.com'
 role: 'Front-End and Back-end Development'
-platform: 'WordPress'
+platform: 'WordPress / Elementor Pro'
 pubDate: 'Mar 06 2023'
 status: 'featured'
 ---

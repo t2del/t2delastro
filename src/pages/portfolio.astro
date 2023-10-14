@@ -7,14 +7,14 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import CustomModal from '../components/Modal.astro';
 
-
-const posts_blog = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-
 const posts_project = (await getCollection('project'))
   //.filter(post => post.data.status == 'active') // Filter out active posts
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+const posts_project_featured = (await getCollection('project'))
+.filter(post => post.data.status == 'featured') // Filter out active posts
+.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+//const fhggroup = await getEntry('project', 'fullertonhealthgroup');  
 ---
 
 
@@ -22,6 +22,15 @@ const posts_project = (await getCollection('project'))
 		<section>			
 			<Container className="custom-class">
 				<h2 class="notshow fromleft"> <span class="text-gradient">Portfolio</span></h2>
+				<ul role="list" class="link-card-grid featured">
+					{
+						posts_project_featured.map((post) => (
+							<li class="notshow blur portfolio-list">
+								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
+							</li>
+						))
+					}
+				</ul>
 				<ul role="list" class="link-card-grid">
 					{
 						posts_project.map((post) => (
