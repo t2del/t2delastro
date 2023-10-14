@@ -17,7 +17,7 @@ import { Debug } from 'astro:components';
 	
 	
 	const posts_project = (await getCollection('project'))
-	.filter(post => post.data.status == 'active') // Filter out active posts
+	//.filter(post => post.data.status == 'active') // Filter out active posts
 	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()).reverse();
 
 	const posts_project_featured = (await getCollection('project'))
