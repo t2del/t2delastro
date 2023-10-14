@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
+
+import Pagination from "../../components/Pagination.astro";
+
+// utils imports
+import { formatBlogPosts } from "../../config/utils";
+
+
+
+export async function getStaticPaths({ paginate }) {
+	const allPosts = await Astro.glob("./*.md");
+  	const formattedPosts = formatBlogPosts(allPosts);
+
+  return paginate(formattedPosts, {
+    pageSize: 3,
+  });
+}
+
+const { page } = Astro.props;
+
+---
+
+<Layout title="Blog | t2del" meta_description="Blog | My Blog" body_class="blog index something you wish to add for any use">
+	<section>
+		<Container className="custom-class">
+			<h2 class="notshow fromleft"> <span class="text-gradient">Blog</span></h2>
+			<ul role="list" class="link-card-grid">
+				{
+					page.data.map((post) => ( 					
+						<li class="notshow fromtop">
+							<a href={post.url}>
+								<img  src={post.frontmatter.heroImage} alt={post.frontmatter.imgalt} title={post.frontmatter.imgalt} />
+								
+								<h4 class="title">{post.frontmatter.title}</h4>
+							</a>							
+						</li>
+					))
+				  }
+			</ul>
+			<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+		</Container>			
+	</section>
+</Layout>
