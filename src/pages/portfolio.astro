@@ -30,14 +30,18 @@ import { Debug } from 'astro:components';
 
 				<ul role="list" class="link-card-grid">
 					{
-						posts_project.map((post) => (
-							<li class="notshow blur portfolio-list">
-								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
-							</li>
-						))
-					}
-					
-				</ul>
+						posts_project.map((post) => {
+						  if (post.data.status == 'active') {
+							return (
+							  <li class="notshow blur portfolio-list">
+								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage} />
+							  </li>
+							);
+						  }
+						  return null;
+						})
+					  }
+				</ul>	
 				{
 					posts_project.map((post) => (
 						<div id={post.slug} class="modal">						

@@ -60,7 +60,7 @@ import { Debug } from 'astro:components';
 		</Container>
 	</section>
 
-	<section>
+	<section id="blog">
 		<Container className="custom-class">
 			<h2 class="notshow fromleft"> <span class="text-gradient">Blog</span></h2>
 			<ul role="list" class="link-card-grid">
@@ -97,12 +97,17 @@ import { Debug } from 'astro:components';
 				</ul>
 				<ul role="list" class="link-card-grid">
 					{
-						posts_project.map((post) => (
-							<li class="notshow blur portfolio-list">
-								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
-							</li>
-						))
-					}
+						posts_project.map((post) => {
+						  if (post.data.status == 'active') {
+							return (
+							  <li class="notshow blur portfolio-list">
+								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage} />
+							  </li>
+							);
+						  }
+						  return null;
+						})
+					  }
 				</ul>						
 			</Container>
 			{
