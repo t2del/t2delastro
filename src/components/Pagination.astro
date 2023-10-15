@@ -6,13 +6,13 @@ const { prevUrl , nextUrl } = Astro.props;
 
 ---
 
-<nav aria-label="Blog pages">
+<nav aria-label="Blog pages" class="pagination-blog">
   {
     prevUrl && (
       <Link
         text="Previous"
         href={`/t2delastro${prevUrl}/`}
-        style="primary"
+        style="primary prev"
         borderVisible={true}
         isFilled={false}
         icon={{
@@ -27,7 +27,7 @@ const { prevUrl , nextUrl } = Astro.props;
       <Link
         text="Next"
         href={`/t2delastro${nextUrl}/`}
-        style="primary"
+        style="primary next"
         borderVisible={true}
         isFilled={false}
         icon={{

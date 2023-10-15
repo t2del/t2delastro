@@ -1,18 +1,16 @@
 ---
-pubDate: 'Jul 08 2022'
-heroImage: '/t2delastro/blog-placeholder-3.jpg'
-imgalt: 'Sixth post'
-status: 'active'
-layout: "../../layouts/BlogPostLayout.astro"
-title: A Post about Important Items Of Life
-date: 2022-11-20
-author: Darnell McClure
+pubDate: 'Oct 15 2023'
+heroImage: '/t2delastro/blog/blog-placeholder-3.jpg'
+imgalt: 'Fifth post'
+title: Fifth - A Post about Important Items Of Life
+author: T2del
 image: {
-  src: "/images/post-1.jpg",
+  src: "/t2delastro/blog/blog-placeholder-3.jpg",
   alt: "A picture of a coder",
 }
 description: Have you ever wondered what the most important items of life are? Well, wonder no more!
-draft: false
+status: 'active'
+date: 2023-10-15
 category: Reference Docs
 ---
 

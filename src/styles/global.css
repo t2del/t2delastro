@@ -48,9 +48,12 @@ span {
 
 
 .content__container {
-	margin: 100px auto;
+	margin: 30px auto;
 	max-width: var(--container-max-width);
 	padding: var(--container-padding);
+}
+.content__container.blog-container {
+	margin: 30px auto;
 }
 .content__container.container-header {
 	margin: 0 auto;
@@ -301,4 +304,24 @@ h2 {
 .link-card-grid.featured {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+.link-card-grid.grid-3 {
+	grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr));
+}
+
+
+nav.pagination-blog {
+	justify-content: space-between;
+}
+nav.pagination-blog a {
+	display: flex;
+	align-items: center;
+    gap: 5px;
+}
+nav.pagination-blog a svg {
+	transition: all 150ms ease-in;
+}
+nav.pagination-blog a:hover svg {
+	transform: scale(1.2);
 }

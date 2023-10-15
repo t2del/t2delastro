@@ -10,20 +10,20 @@ export const nav = [
 	{
 	  title: 'Blog',
 	  slug: '/t2delastro/blog',
-	  submenu: [
-		{
-		  	title: 'First post',
-		  	slug: '/t2delastro/blog/first-post',
-		},
-		{
-			title: 'Second post',
-			slug: '/t2delastro/blog/second-post',
-		},
-		{
-			title: 'Third post',
-			slug: '/t2delastro/blog/third-post',
-		},
-	  ],
+	//   submenu: [
+	// 	{
+	// 	  	title: 'First post',
+	// 	  	slug: '/t2delastro/blog/first-post',
+	// 	},
+	// 	{
+	// 		title: 'Second post',
+	// 		slug: '/t2delastro/blog/second-post',
+	// 	},
+	// 	{
+	// 		title: 'Third post',
+	// 		slug: '/t2delastro/blog/third-post',
+	// 	},
+	//   ],
 	},
 	{
 	  title: 'Portfolio',
