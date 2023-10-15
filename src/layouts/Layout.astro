@@ -6,7 +6,7 @@ import { nav } from '../config/nav.js';
 import Header from '../components/head/Header.astro';
 import Footer from '../components/head/Footer.astro';
 import Logo from '../components/Logo.astro';
-import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title: string;
 	meta_description: string;
@@ -18,10 +18,9 @@ const { title, meta_description, body_class } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={meta_description} />
-				
+		<BaseHead title={title} description={meta_description} />				
 	</head>
-	<ViewTransitions></ViewTransitions>
+
 	<body class={body_class}>
 		<Header rightMenu navData={nav} id="navID" slot="header">
 			<span slot="logo">
