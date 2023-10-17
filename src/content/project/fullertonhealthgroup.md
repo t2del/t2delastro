@@ -1,7 +1,7 @@
 ---
 title: 'FullertonHealth Group'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/fhg-group.png'
+heroImage: '/t2delastro/project/fhg-group.jpg'
 siteUrl:  'https://www.fullertonhealth.com'
 role: 'Front-End and Back-end Development'
 platform: 'WordPress / Elementor Pro'

@@ -1,7 +1,7 @@
 ---
 title: 'FullertonHealth Singapore'
 desc: 'Lorem ipsum dolor sit amet'
-heroImage: '/t2delastro/project/fhg-singapore.png'
+heroImage: '/t2delastro/project/fhg-singapore.jpg'
 siteUrl:  'https://www.fullertonhealth.com/sg'
 role: 'Front-End and Back-end Development'
 platform: 'WordPress / Elementor Pro'
