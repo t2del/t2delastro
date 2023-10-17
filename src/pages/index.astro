@@ -67,23 +67,22 @@ import { ViewTransitions, fade, slide } from 'astro:transitions';
 			<ul role="list" class="link-card-grid featured">
 				{
 					posts_project_featured.map((post) => (
-						<li class="notshow blur portfolio-list">
+						<li class="notshow blur portfolio-list"  id={post.slug}>
 							<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
 						</li>
-						<div id={post.slug} class="modal">						
-								<div class="modal-content" transition:animate={slide({ duration: '0.4s' })}>						
-									<div class="modal-grid">
-										
-										<div class="description">
-											<p>{post.data.title}</p>
-											<div>Role: <span>{post.data.role}</span></div>
-											<div>Platform: <span>{post.data.platform}</span></div>
-											<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
-										</div>
-										<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
-									</div>
-								</div>
-							</div>
+						// <div id={post.slug} class="modal">						
+						// 	<div class="modal-content" transition:animate={slide({ duration: '0.4s' })}>						
+						// 		<div class="modal-grid">									
+						// 			<div class="description">
+						// 				<p>{post.data.title}</p>
+						// 				<div>Role: <span>{post.data.role}</span></div>
+						// 				<div>Platform: <span>{post.data.platform}</span></div>
+						// 				<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
+						// 			</div>
+						// 			<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
+						// 		</div>
+						// 	</div>
+						// </div>
 					))
 				}
 			</ul>
@@ -92,23 +91,23 @@ import { ViewTransitions, fade, slide } from 'astro:transitions';
 					posts_project.map((post) => {
 						if (post.data.status == 'active') {
 						return (
-							<li class="notshow blur portfolio-list">
-							<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage} />
-							</li>
-							<div id={post.slug} class="modal">						
-								<div class="modal-content" transition:animate={slide({ duration: '0.4s' })}>						
-									<div class="modal-grid">
+						<li class="notshow blur portfolio-list"  id={post.slug}>
+							<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
+						</li>
+							// <div id={post.slug} class="modal">						
+							// 	<div class="modal-content" transition:animate={slide({ duration: '0.4s' })}>						
+							// 		<div class="modal-grid">
 										
-										<div class="description">
-											<p>{post.data.title}</p>
-											<div>Role: <span>{post.data.role}</span></div>
-											<div>Platform: <span>{post.data.platform}</span></div>
-											<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
-										</div>
-										<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
-									</div>
-								</div>
-							</div>
+							// 			<div class="description">
+							// 				<p>{post.data.title}</p>
+							// 				<div>Role: <span>{post.data.role}</span></div>
+							// 				<div>Platform: <span>{post.data.platform}</span></div>
+							// 				<a href={post.data.siteUrl} rel="noopener noreferrer"><span>Visit Site</span></a>
+							// 			</div>
+							// 			<div class="img"><img  src={post.data.heroImage} alt={post.data.title}  title={post.data.title} /></div>
+							// 		</div>
+							// 	</div>
+							// </div>
 						);
 						}
 						return null;
