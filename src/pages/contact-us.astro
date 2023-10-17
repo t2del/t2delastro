@@ -21,29 +21,11 @@ if (Astro.request.method === "POST") {
 
 
 <Layout title="Contact Us | t2del" meta_description="t2del" body_class="contact-us">
-	<section id="portfolio">			
-		<Container className="custom-class">
-			
+	<section id="contact-us">			
+		<Container className="container-contact-us">			
 			<div class="feedback-form">
 				<h2 class="notshow fromleft"> <span class="text-gradient">Contact Form</span></h2>
-				<form
-					netlify
-					netlify-honeypot
-					name="feedback"
-					method="POST"
-					
-				>
-					<p class="hidden">
-					<label>
-						Don’t fill this out if you’re human: <input name="bot-field" />
-					</label>
-					</p>
-					<input type="hidden" name="form-name" value="feedback" />
-					<input id="name" type="text" name="name" placeholder="Name"  />
-					<input id="email" type="email" name="email" placeholder="Email" required />
-					<textarea id="feedback" wrap="soft" name="feedback"  placeholder="What is your feedback?" required></textarea>
-					<button type="submit">Submit</button>
-				</form>
+				<iframe style="border:none;width:100%;" height="470px" src="https://opnform.com/forms/contact-us-h9p9jn"></iframe>
 			</div>		
 		</Container>					
 	</section>	
@@ -52,8 +34,9 @@ if (Astro.request.method === "POST") {
 <style>
 	.feedback-form {
 	margin: 0 auto;
+	widows: 100%;
 	min-width: 250px;
-	width: 400px;
+	max-width: 450px;
   }
   input,
   textarea,
@@ -77,5 +60,8 @@ if (Astro.request.method === "POST") {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+  }
+  iframe .text-center.w-full.mt-2 {
+	display: none;
   }
   </style>

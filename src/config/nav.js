@@ -29,5 +29,9 @@ export const nav = [
 	  title: 'Portfolio',
 	  slug: '/t2delastro/portfolio',
 	},
+	{
+		title: 'Contact',
+		slug: '/t2delastro/contact-us',
+	  },
   ];
 
