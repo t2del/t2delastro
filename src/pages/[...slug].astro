@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../layouts/BlogPost.astro';
+import { Debug } from 'astro:components';
+
+const { slug } = Astro.params;
+
+let res = await fetch(`http://localhost/wpreact/wp-json/wp/v2/pages?slug=${slug}`)
+let [post] = await res.json();
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  let data = await fetch("http://localhost/wpreact/wp-json/wp/v2/pages")
+  let posts = await data.json();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post: post },
+  }));
+}
+
+---
+<script type="module" src="https://code.jquery.com/jquery-3.7.1.min.js">
+	$(document).ready(function(){
+		alert('asd');
+		$("#home-hero-2 > .elementor-widget-wrap").slick({
+			dots: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			arrows: false,
+			infinite: true,
+			speed: 700,
+			fade: true,
+			cssEase: 'linear',
+		});	
+	});		
+</script>
+<Layout title={`${post.title.rendered} | t2del` } meta_description={post.title.rendered} > 
+	<!-- <BlogPost {...post.data}> -->
+		<!-- <Content /> -->
+	<!-- </BlogPost> -->
+	<section>
+		<Fragment set:html={post.content.rendered} />
+	</section>
+	
+</Layout>
+
