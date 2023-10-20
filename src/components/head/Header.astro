@@ -3,31 +3,31 @@ import { Icon } from 'astro-icon'
 const { navData, rightMenu } = Astro.props;
 import Container from '../../components/Container.astro';
 
-//const data = '';
+const data = '';
 // const randomUser = posts.results[0];
 // const posts = await fetch('http://localhost/wpreact/wp-json/custom/v1/menu-header/');
 // const data = await posts.json();
 
-export async function fetchData() {
-    try {
-      const response = await fetch('http://localhost/wpreact/wp-json/custom/v1/menu-header/');
-      if (response.ok) {
-        const data = await response.json();
-        // Now you can work with the 'data'
-        return data;
-      } else {
-        // Handle the case where the response is not OK (e.g., not found, unauthorized, etc.)
-        return { error: 'Error: Unable to fetch data' };
-      }
-    } catch (error) {
-      // Handle any network or fetch-related errors
-      return { error: 'An error occurred while fetching data: ' + error.message };
-    }
-  }
+// export async function fetchData() {
+//     try {
+//       const response = await fetch('http://localhost/wpreact/wp-json/custom/v1/menu-header/');
+//       if (response.ok) {
+//         const data = await response.json();
+//         // Now you can work with the 'data'
+//         return data;
+//       } else {
+//         // Handle the case where the response is not OK (e.g., not found, unauthorized, etc.)
+//         return { error: 'Error: Unable to fetch data' };
+//       }
+//     } catch (error) {
+//       // Handle any network or fetch-related errors
+//       return { error: 'An error occurred while fetching data: ' + error.message };
+//     }
+//   }
 
-const fetchedData = fetchData();
-const data = await fetchedData;
-console.log(data);
+// const fetchedData = fetchData();
+// const data = await fetchedData;
+// console.log(data);
 ---
 <script type="module" >
   document.addEventListener('astro:page-load', () => {
@@ -105,7 +105,7 @@ console.log(data);
                 )}
               </li>
             ))}
-            {data.length > 0 && (
+             { data.length > 0 && (
               <li class="has-submenu">
                 <a href="#">Wordpress</a>
                 <ul class="sub-menu ">
