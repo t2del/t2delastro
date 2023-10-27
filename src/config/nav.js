@@ -3,10 +3,10 @@ export const nav = [
 	  title: 'Home',
 	  slug: '/t2delastro/',
 	},
-	{
-	  title: 'About',
-	  slug: '/t2delastro/about',
-	},
+	// {
+	//   title: 'About',
+	//   slug: '/t2delastro/about',
+	// },
 	{
 	  title: 'Blog',
 	  slug: '/t2delastro/blog',
@@ -25,10 +25,10 @@ export const nav = [
 	// 	},
 	//   ],
 	},
-	{
-	  title: 'Portfolio',
-	  slug: '/t2delastro/portfolio',
-	},
+	// {
+	//   title: 'Portfolio',
+	//   slug: '/t2delastro/portfolio',
+	// },
 	{
 		title: 'Contact',
 		slug: '/t2delastro/contact-us',
