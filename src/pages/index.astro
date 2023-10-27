@@ -33,14 +33,14 @@ import { ViewTransitions, fade, slide } from 'astro:transitions';
 			<h2 class="notshow fromleft">About <span class="text-gradient">T2del</span></h2>
 
 			<div class="link-card-grid">
-				<div class="photo">
+				<div class="photo notshow blur">
 					<Image src="https://t2del.github.io/images/den.jpg" width={400} height={400} format='webp' alt={'Dennis Macapagal'} class:list={'profile-photo'}></Image>
 				</div>
-				<div class="description">
-					<p>
+				<div class="description ">
+					<p class=" notshow blur">
 						A <code>Full-Stack</code> Developer with more than 10 years of relevant experience in web programming. Bringing up-to-date industry skills in front-end and back-end technology such as PHP, HTML, CSS, JavaScript, MySQL and hands-on experience with CMS such as WordPress. Detail-oriented and motivated to drive project completion on target with exceptional quality and guaranteed client satisfaction.
 					</p>
-					<ul class="list-unstyled list-boxed" id="skills-list">
+					<ul class="list-unstyled list-boxed notshow blur" id="skills-list">
 						<li>PHP</li>
 						<li>HTML</li>
 						<li>CSS</li>

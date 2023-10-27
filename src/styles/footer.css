@@ -26,7 +26,7 @@ footer .social-links {
 footer .social-links li {
 	margin: 10px 10px 10px 10px;
 	display: inline-block;
-	font-size: 40px;
+	font-size: 24px;
 }
 footer .social-links li a {
 	color: var(--theme-on-bg);
