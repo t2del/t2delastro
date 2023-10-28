@@ -105,12 +105,12 @@ const data = await fetchedData;
                 <ul class="sub-menu ">
                   {data.map(navItem => (
                   <li className={navItem.submenu ? 'has-submenu' : ''}>
-                    <a href={`${Astro.site}wp_blog/${navItem.slug}`}>{navItem.title}</a>
+                    <a href={`./${navItem.slug}`}>{navItem.title}</a>
                     {navItem.submenu && (
                       <ul class="sub-menu ">
                         {navItem.submenu.map(submenuItem => (
                           <li>                           
-                            <a href={`/wp_blog/${submenuItem.slug}`}>{submenuItem.title}</a>
+                            <a href={`/${submenuItem.slug}`}>{submenuItem.title}</a>
                           </li>
                         ))}
                       </ul>

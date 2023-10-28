@@ -1,14 +1,27 @@
 ---
-const { title = 'Welcome, world!', slug, classContainer = '', classText = '', imgsrc = '' } = Astro.props;
+import Link from '../components/Link.astro';
+
+const { 
+  title = 'Welcome, world!', 
+  slug, 
+  classContainer = '', 
+  classText = '', 
+  imgsrc = '',
+  role = '',
+  platform = '',
+  siteURL = '#',
+} = Astro.props;
 
 ---
 
 <!-- Store the message prop as a data attribute. -->
 <astro-greet data-message={title} data-slug={slug}>
   <button class={`btn-modal ${classContainer}`} id={`btn-modal-${slug}`}>
-
     <img  src={imgsrc} alt={title}  title={title} class="" />
-    <h4 class={`title ${classText}`}>{title}</h4>  
+    <h4 class={`title ${classText}`}>{title}</h4> 
+    <h3><span>Role:</span>  {role}</h3>
+    <h3><span>Platform:</span>  {platform}</h3>
+    <Link href={siteURL} text="Visit Site" classes="display-on-modal" isFilled={true} borderVisible={true}>
   </button>
 </astro-greet>
 

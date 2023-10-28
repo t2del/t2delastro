@@ -22,7 +22,15 @@ import { Debug } from 'astro:components';
 					{
 						posts_project_featured.map((post) => (
 							<li class="notshow blur portfolio-list"  id={post.slug}>
-								<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
+								<CustomModal 
+									title={post.data.title} 
+									slug={post.slug}
+									siteURL={post.data.siteUrl} 
+									classText="animate_underline" 
+									imgsrc={post.data.heroImage}
+									role={post.data.role}
+									platform={post.data.platform}
+								/>
 							</li>
 						))
 					}
@@ -34,7 +42,15 @@ import { Debug } from 'astro:components';
 						  if (post.data.status == 'active') {
 							return (
 								<li class="notshow blur portfolio-list"  id={post.slug}>
-									<CustomModal title={post.data.title} slug={post.slug} classText="animate_underline" imgsrc={post.data.heroImage}  />
+									<CustomModal 
+										title={post.data.title} 
+										slug={post.slug}
+										siteURL={post.data.siteUrl} 
+										classText="animate_underline" 
+										imgsrc={post.data.heroImage}
+										role={post.data.role}
+										platform={post.data.platform}
+									/>
 								</li>
 							);
 						  }
