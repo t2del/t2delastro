@@ -134,5 +134,13 @@ header .content__container.container-header{
      header[mobile-menu-open] nav ul li {
        font-size: var(--font-size-lg);
        margin-bottom: 1rem;
+       text-align: center;
      }
+     nav ul li.has-submenu .sub-menu {
+      left: 0;
+      position: relative;
+      border-radius: 0;
+      padding: 5px 5px;
+      box-shadow: none;
+     } 
   }
