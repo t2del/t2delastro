@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 //import { type CollectionEntry, getCollection } from 'astro:content';
 import Container from '../components/Container.astro';
 import { Debug } from 'astro:components';
+import FormattedDate from '../components/FormattedDate.astro';
 
 const { slug } = Astro.params;
 
@@ -21,13 +22,24 @@ export async function getStaticPaths() {
     props: { post: post },
   }));
 }
+const originalDate = new Date(post.date);
+const isoString = originalDate.toISOString();
+
+
+
 
 ---
-<!-- <Debug {post}></Debug> -->
+
 <Layout title={`${post.title.rendered} | t2del | Wordpress` } meta_description={`${post.yoast_head_json.description}` } body_class={`wp blog-inner ${post.title.rendered}` }>
-	<Container className="blog-container">
-		<h1 set:html={post.title.rendered} />
-    	<Fragment set:html={post.content.rendered} />
-	</Container>
+	<article>
+    <Container className="blog-container">
+        <div class="date">
+          <FormattedDate date={originalDate} />
+        </div>
+        <h1 set:html={post.title.rendered} />
+        <hr />
+        <Fragment set:html={post.content.rendered} />
+    </Container>
+</article>
 </Layout>
 

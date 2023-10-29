@@ -266,7 +266,7 @@ main {
 	z-index: -1;
 }
 h2 {
-	font-size: 3em;
+	font-size: var(--font-size-lg);
 	font-weight: 700;
 	line-height: 1;
 	text-align: center;
