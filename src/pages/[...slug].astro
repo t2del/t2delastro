@@ -38,8 +38,9 @@ const isoString = originalDate.toISOString();
         </div>
         <h1 set:html={post.title.rendered} />
         <hr />
-        <Fragment set:html={post.content.rendered} />
+        
     </Container>
+    <Fragment set:html={post.content.rendered} />
 </article>
 </Layout>
 
